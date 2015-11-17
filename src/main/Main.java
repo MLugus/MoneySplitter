@@ -11,7 +11,7 @@ public class Main extends Application {
 
     Button looGrupp, valiGrupp;
     Scene scene;
-    GridPane layout;
+    GridPane layout1;
     MenuBar topMenu;
     Menu fileMenu, looMenu, kustutaMenu;
 
@@ -53,11 +53,11 @@ public class Main extends Application {
         topMenu.getMenus().addAll(fileMenu);
         GridPane.setConstraints(topMenu, 0, 0);
 
-        //main layout
-        layout = new GridPane();
-        layout.setPadding(new Insets(0, 10, 10, 0));
-        layout.setVgap(8);
-        layout.setHgap(10);
+        //main layout1
+        layout1 = new GridPane();
+        layout1.setPadding(new Insets(0, 10, 10, 0));
+        layout1.setVgap(8);
+        layout1.setHgap(10);
 
         // tervituskiri
         Label tervitus = new Label("Tere tulemast MoneySplitter'isse!!");
@@ -72,11 +72,11 @@ public class Main extends Application {
         GridPane.setConstraints(valiGrupp, 8, 15);
 
         //lisan kõik osad layouti
-        layout.getChildren().addAll(valiGrupp, looGrupp, tervitus, topMenu);
+        layout1.getChildren().addAll(valiGrupp, looGrupp, tervitus, topMenu);
 
         // scene1 ja window
         primaryStage.setTitle("MoneySplitter");
-        scene = new Scene(layout, 350, 475);
+        scene = new Scene(layout1, 350, 475);
         primaryStage.setScene(scene);
         primaryStage.show();
 
