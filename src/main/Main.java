@@ -4,16 +4,19 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.*;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    Button looGrupp, valiGrupp;
-    Scene scene;
-    GridPane layout1;
-    MenuBar topMenu;
-    Menu fileMenu, looMenu, kustutaMenu;
+    public static Button looGrupp, valiGrupp;
+    public static Scene scene1, scene2;
+    public static GridPane layout1;
+    public static VBox layout2;
+    public static MenuBar topMenu;
+    public static Menu fileMenu, looMenu, kustutaMenu;
+    public LooGruppStseen looGruppStseenObj;
 
     public static void main(String[] args) {
         launch(args);
@@ -76,9 +79,19 @@ public class Main extends Application {
 
         // scene1 ja window
         primaryStage.setTitle("MoneySplitter");
-        scene = new Scene(layout1, 350, 475);
-        primaryStage.setScene(scene);
+        scene1 = new Scene(layout1, 350, 475);
+        primaryStage.setScene(scene1);
         primaryStage.show();
+
+        //loo uus grupp objekti loomine
+        looGruppStseenObj = new LooGruppStseen();
+        //võta layout LooGruppStseen objektist
+        layout2 = looGruppStseenObj.getLayout();
+        //loo uus grupp stseen
+        scene2 = new Scene(layout2, 350, 475);
+
+        // loo uus grupp nupp event
+        looGrupp.setOnAction(event -> primaryStage.setScene(scene2));
 
 
     }
