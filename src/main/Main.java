@@ -7,20 +7,26 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import loogika.AndmeBaas;
 
 public class Main extends Application {
 
     public static Button looGrupp, valiGrupp;
-    public static Scene scene1, scene2;
+    public static Scene scene1, scene2, scene3;
     public static GridPane layout1;
-    public static VBox layout2;
+    public static VBox layout2, layout3;
     public static MenuBar topMenu;
     public static Menu fileMenu, looMenu, kustutaMenu;
     public LooGruppStseen looGruppStseenObj;
+    private LisaLiigeStseen lisaLiigeStseenObj;
+
+    //andmebaas
+    private static AndmeBaas andmeBaas;
 
     public static void main(String[] args) {
         launch(args);
     } // main.Main meetodi l6pp
+
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -33,23 +39,19 @@ public class Main extends Application {
 
         // fileMenu osad e. peamine menüü "file"
         fileMenu.getItems().addAll(looMenu, kustutaMenu);
-        fileMenu.getItems().add(new SeparatorMenuItem());
         MenuItem j2lgi = new MenuItem("J2lgi kulutusi...");
-        fileMenu.getItems().add(j2lgi);
         MenuItem jaga = new MenuItem("Jaga raha...");
-        fileMenu.getItems().add(jaga);
+        fileMenu.getItems().addAll(new SeparatorMenuItem(), j2lgi, jaga);
 
         // looMenu osad e. pea menu sees
-        MenuItem lisaLiige = new MenuItem("Lisa uus liige...");
-        looMenu.getItems().add(lisaLiige);
+        MenuItem lisaLiige = new MenuItem("Lisa uus liige");
         MenuItem looGrupp1 = new MenuItem("Loo uus grupp");
-        looMenu.getItems().add(looGrupp1);
+        looMenu.getItems().addAll(lisaLiige, looGrupp1);
 
         // kustutaMenu osad e. pea menu sees
         MenuItem kustutaGrupp = new MenuItem("Kustuta grupp...");
-        kustutaMenu.getItems().add(kustutaGrupp);
         MenuItem kustutaLiige = new MenuItem("Kustuta liige...");
-        kustutaMenu.getItems().add(kustutaLiige);
+        kustutaMenu.getItems().addAll(kustutaGrupp, kustutaLiige);
 
         // main menu bar
         topMenu = new MenuBar();
@@ -83,6 +85,12 @@ public class Main extends Application {
         primaryStage.setScene(scene1);
         primaryStage.show();
 
+
+        //andmebaas
+        andmeBaas = new AndmeBaas();
+
+
+
         //loo uus grupp objekti loomine
         looGruppStseenObj = new LooGruppStseen();
         //võta layout LooGruppStseen objektist
@@ -92,8 +100,23 @@ public class Main extends Application {
 
         // loo uus grupp nupp event
         looGrupp.setOnAction(event -> primaryStage.setScene(scene2));
+        looGrupp1.setOnAction(event -> primaryStage.setScene(scene2));
+        looGruppStseenObj.nupp.setOnAction(event1 -> primaryStage.setScene(scene3));
 
+        //loon uue stseeni objekti e. liikmete lisamise objekti
+        lisaLiigeStseenObj = new LisaLiigeStseen();
+        layout3 = lisaLiigeStseenObj.getLayout();
+        scene3 = new Scene(layout3, 350, 475);
+
+        // lisa liige nupp event
+        lisaLiige.setOnAction(event -> primaryStage.setScene(scene3));
 
     }
+
+    public static AndmeBaas getAndmeBaas() {
+        return andmeBaas;
+    }
+
+
 
 } // class l6pp

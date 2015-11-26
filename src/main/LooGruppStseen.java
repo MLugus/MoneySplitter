@@ -1,29 +1,36 @@
 package main;
 
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
+import loogika.Grupp;
+
 
 import static javafx.geometry.Pos.CENTER;
 
-/**
- * Created by Madis on 18.11.2015.
- */
 public class LooGruppStseen {
 
     private Label looGrpSelgitus;
-    public VBox layout;
-    private Button nupp;
+    private VBox layout;
+    Button nupp;
     private TextField tekstv2li;
 
 
     public LooGruppStseen() {
-        layout = new VBox();
-        nupp = new Button("OK");
-        looGrpSelgitus = new Label("Palun sisestage uue grupi nimi!");
-        tekstv2li = new TextField();
-        tekstv2li.setPromptText("Grupi nimi");
+        this.layout = new VBox();
+        this.nupp = new Button("LISA");
+        this.looGrpSelgitus = new Label("Palun sisestage uue grupi nimi!");
+        this.tekstv2li = new TextField();
+        this.tekstv2li.setPromptText("Grupi nimi");
+
+
+        nupp.setOnAction(event -> {
+            //uus grupp
+            Grupp grupp = new Grupp(tekstv2li.getText());
+            //lisan andmebaasi
+            Main.getAndmeBaas().lisaGrupp(grupp);
+
+        });
+
 
 
     }
