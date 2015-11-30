@@ -35,6 +35,8 @@ public class StartStseen {
 
         // loo uus grupp nupp
         looGrupp = new Button("Loo uus grupp");
+        //loo grupp event nupp
+        // looGrupp.setOnAction(event -> main.primaryStage.setScene(scene1));
 
 
         // vali grupp nupp
