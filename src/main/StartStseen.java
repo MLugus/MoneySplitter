@@ -11,7 +11,7 @@ import static javafx.geometry.Pos.CENTER;
 
 public class StartStseen {
 
-    public static Button looGrupp, valiGrupp;
+    public Button looGrupp, valiGrupp;
     public BorderPane layout1;
     public VBox layout2;
     private Label tervitus;
@@ -36,7 +36,7 @@ public class StartStseen {
         // loo uus grupp nupp
         looGrupp = new Button("Loo uus grupp");
         //loo grupp event nupp
-        // looGrupp.setOnAction(event -> main.primaryStage.setScene(scene1));
+        looGrupp.setOnAction(event -> Main.stseeniVahetus(Main.scene2));
 
 
         // vali grupp nupp

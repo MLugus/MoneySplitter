@@ -9,12 +9,14 @@ import loogika.AndmeBaas;
 
 public class Main extends Application {
 
+
     public static Scene scene1, scene2, scene3;
     public BorderPane layout1, layout3;
     public VBox layout2;
     public LooGruppStseen looGruppStseenObj;
     private LisaLiigeStseen lisaLiigeStseenObj;
     private StartStseen startStseenObj;
+    private static Stage aken;
 
     //andmebaas
     private static AndmeBaas andmeBaas;
@@ -27,15 +29,17 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
+        aken = primaryStage;
+
         // loon StartStseen tyypi objekti
         startStseenObj = new StartStseen();
         this.layout1 = startStseenObj.getLayout1();
 
         // scene1 ja window
-        primaryStage.setTitle("MoneySplitter");
+        aken.setTitle("MoneySplitter");
         scene1 = new Scene(layout1, 350, 475);
-        primaryStage.setScene(scene1);
-        primaryStage.show();
+        aken.setScene(scene1);
+        aken.show();
 
 
         //andmebaas
@@ -66,6 +70,11 @@ public class Main extends Application {
 
     public static AndmeBaas getAndmeBaas() {
         return andmeBaas;
+    }
+
+    //meetod stseenide vaehtuseks
+    public static void stseeniVahetus(Scene stseen) {
+        aken.setScene(stseen);
     }
 
 
