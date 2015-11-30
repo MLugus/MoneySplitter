@@ -1,6 +1,5 @@
 package main;
 
-import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
@@ -23,7 +22,7 @@ public class LisaLiigeStseen {
         this.tekstv2li = new TextField();
         this.tekstv2li.setPromptText("Liikme nimi");
         this.dropDown = new ChoiceBox();
-        dropDown.getItems().addAll(Main.getAndmeBaas());
+        // dropDown.getItems().addAll(Main.getAndmeBaas());
 
 
     }

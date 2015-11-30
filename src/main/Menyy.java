@@ -1,6 +1,5 @@
 package main;
 
-import javafx.application.Application;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -34,9 +33,16 @@ public class Menyy {
         MenuItem kustutaLiige = new MenuItem("Kustuta liige...");
         kustutaMenu.getItems().addAll(kustutaGrupp, kustutaLiige);
 
+
+    }
+
+    public MenuBar getMenuBar() {
         // main menu bar
         topMenu = new MenuBar();
         topMenu.getMenus().addAll(fileMenu);
+
+        return topMenu;
     }
+
 
 }
