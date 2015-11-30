@@ -3,8 +3,11 @@ package main;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuBar;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+
+import static javafx.geometry.Pos.CENTER;
 
 public class StartStseen {
 
@@ -12,6 +15,7 @@ public class StartStseen {
     public BorderPane layout1;
     public VBox layout2;
     private Label tervitus;
+    private Menyy menyyObj;
 
 
     public StartStseen() {
@@ -19,7 +23,6 @@ public class StartStseen {
 
         //main layout1
         this.layout1 = new BorderPane();
-        layout1.setPadding(new Insets(10, 20, 10, 20));
 
         // main layouti sees olev layout
         this.layout2 = new VBox();
@@ -39,6 +42,14 @@ public class StartStseen {
 
         //lisan layout2'te elemendid
         layout2.getChildren().addAll(tervitus, looGrupp, valiGrupp);
+        layout2.setAlignment(CENTER);
+
+        //loon menyy objekti
+        menyyObj = new Menyy();
+
+
+        // lisan menyyriba layouti
+        layout1.setTop(Menyy.getMenuBar());
 
     }
 

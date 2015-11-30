@@ -8,7 +8,9 @@ import javafx.scene.control.SeparatorMenuItem;
 public class Menyy {
 
     private static MenuBar topMenu;
-    private static Menu fileMenu, looMenu, kustutaMenu;
+    private static Menu fileMenu;
+    private Menu looMenu;
+    private Menu kustutaMenu;
 
     public Menyy() {
         // menu loomine jne.
@@ -36,7 +38,7 @@ public class Menyy {
 
     }
 
-    public MenuBar getMenuBar() {
+    public static MenuBar getMenuBar() {
         // main menu bar
         topMenu = new MenuBar();
         topMenu.getMenus().addAll(fileMenu);

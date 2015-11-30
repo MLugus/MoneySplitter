@@ -2,7 +2,6 @@ package main;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -10,12 +9,9 @@ import loogika.AndmeBaas;
 
 public class Main extends Application {
 
-    public static Button looGrupp, valiGrupp;
     public static Scene scene1, scene2, scene3;
-    public BorderPane layout1;
-    public VBox layout2, layout3;
-    public static MenuBar topMenu;
-    public static Menu fileMenu, looMenu, kustutaMenu;
+    public BorderPane layout1, layout3;
+    public VBox layout2;
     public LooGruppStseen looGruppStseenObj;
     private LisaLiigeStseen lisaLiigeStseenObj;
     private StartStseen startStseenObj;
@@ -49,7 +45,7 @@ public class Main extends Application {
         //loo uus grupp objekti loomine
         this.looGruppStseenObj = new LooGruppStseen();
         //võta layout LooGruppStseen objektist
-        this.layout2 = looGruppStseenObj.getLayout();
+        this.layout2 = looGruppStseenObj.getLayout2();
         //loo uus grupp stseen
         scene2 = new Scene(layout2, 350, 475);
 
@@ -60,7 +56,7 @@ public class Main extends Application {
 
         //loon uue stseeni objekti e. liikmete lisamise objekti
         lisaLiigeStseenObj = new LisaLiigeStseen();
-        layout3 = lisaLiigeStseenObj.getLayout();
+        layout3 = lisaLiigeStseenObj.getLayout1();
         scene3 = new Scene(layout3, 350, 475);
 
         // lisa liige nupp event
