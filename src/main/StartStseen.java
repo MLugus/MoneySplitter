@@ -41,6 +41,8 @@ public class StartStseen {
 
         // vali grupp nupp
         valiGrupp = new Button("Vali grupp");
+        // vali grupp event nupp
+        valiGrupp.setOnAction(event -> Main.stseeniVahetus(Main.scene3));
 
         //lisan layout2'te elemendid
         layout2.getChildren().addAll(tervitus, looGrupp, valiGrupp);

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class AndmeBaas {
 
-    ArrayList<Grupp> gruppideList;
+    static ArrayList<Grupp> gruppideList;
 
     public AndmeBaas() {
 

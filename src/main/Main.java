@@ -11,8 +11,7 @@ public class Main extends Application {
 
 
     public static Scene scene1, scene2, scene3;
-    public BorderPane layout1, layout3;
-    public VBox layout2;
+    public BorderPane layout1, layout2, layout3;
     public LooGruppStseen looGruppStseenObj;
     private LisaLiigeStseen lisaLiigeStseenObj;
     private StartStseen startStseenObj;
@@ -49,7 +48,7 @@ public class Main extends Application {
         //loo uus grupp objekti loomine
         this.looGruppStseenObj = new LooGruppStseen();
         //võta layout LooGruppStseen objektist
-        this.layout2 = looGruppStseenObj.getLayout2();
+        this.layout2 = looGruppStseenObj.getLayout1();
         //loo uus grupp stseen
         scene2 = new Scene(layout2, 350, 475);
 

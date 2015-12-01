@@ -5,6 +5,10 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import loogika.AndmeBaas;
+import loogika.Grupp;
+
+import java.util.ArrayList;
 
 import static javafx.geometry.Pos.CENTER;
 
@@ -25,7 +29,6 @@ public class LisaLiigeStseen {
         this.tekstv2li = new TextField();
         this.tekstv2li.setPromptText("Liikme nimi");
         this.dropDown = new ChoiceBox();
-        // dropDown.getItems().addAll(Main.getAndmeBaas());
 
 
         layout1.setTop(Menyy.getMenuBar());
