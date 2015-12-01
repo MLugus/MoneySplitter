@@ -5,6 +5,9 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import loogika.AndmeBaas;
+import loogika.Grupp;
+
+import java.util.ArrayList;
 
 public class Main extends Application {
 
@@ -63,6 +66,9 @@ public class Main extends Application {
     public static AndmeBaas getAndmeBaas() {
         return andmeBaas;
     }
+
+    //// tagastab VB gruppide arraylisti
+    //// public static ArrayList<Grupp> getGruppList(){return andmeBaas.gruppideList;}
 
     //meetod stseenide vahetuseks
     public static void stseeniVahetus(Scene stseen) {

@@ -18,5 +18,9 @@ public class Grupp {
     //public void lisaLiige(Liige liige){this.grupiLiikmed.add(liige);}
 
 
+    @Override
+    public String toString() {
+        return this.grupiNimi;
+    }
 }
 

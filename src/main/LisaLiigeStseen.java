@@ -1,6 +1,5 @@
 package main;
 
-import javafx.collections.FXCollections;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -10,9 +9,6 @@ import javafx.scene.layout.VBox;
 import loogika.AndmeBaas;
 import loogika.Grupp;
 
-import java.util.ArrayList;
-import java.util.function.BooleanSupplier;
-
 import static javafx.geometry.Pos.CENTER;
 
 public class LisaLiigeStseen {
@@ -21,7 +17,7 @@ public class LisaLiigeStseen {
     private VBox layout2;
     private Button nupp;
     private TextField tekstv2li;
-    private ChoiceBox dropDown;
+    private ChoiceBox<Grupp> dropDown;
     private Label infoText;
 
 
@@ -34,6 +30,7 @@ public class LisaLiigeStseen {
         this.nupp.setOnAction(event -> {
             /////// lisab liikme (see veel ei tööta)
 
+
             // toob ette nö alertboxi, et kysida kas lisada veel liige v6i mitte
             Boolean vastus = AskBox.kysimusKast();
 
@@ -41,17 +38,17 @@ public class LisaLiigeStseen {
             if (vastus) {
                 tekstv2li.clear();
             } else {
-                if (!vastus) {
-                    ///////////// ESIALGU VIIB START STSEENI TAGASI
+
+                ///////////// ESIALGU VIIB START STSEENI TAGASI
                     Main.stseeniVahetus(Main.scene1); //// ei vii millegipärast
                 }
-            }
+
         });
 
         this.tekstv2li = new TextField();
         this.tekstv2li.setPromptText("Liikme nimi");
 
-        this.dropDown = new ChoiceBox();
+        this.dropDown = AndmeBaas.getGruppideListChBox();
 
         this.infoText = new Label("Sisestage uue liikme nimi!");
 
