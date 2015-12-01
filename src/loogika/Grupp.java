@@ -14,4 +14,9 @@ public class Grupp {
         this.grupiNimi = nimi;
         this.grupiLiikmed = new ArrayList<>();
     }
+
+    //public void lisaLiige(Liige liige){this.grupiLiikmed.add(liige);}
+
+
 }
+

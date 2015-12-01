@@ -31,8 +31,10 @@ public class LooGruppStseen {
 
         layout2.setAlignment(CENTER);
         layout2.getChildren().addAll(looGrpSelgitus, tekstv2li, nupp);
+        layout2.setSpacing(20);
         layout1.setTop(Menyy.getMenuBar());
         layout1.setCenter(layout2);
+
 
         nupp.setOnAction(event -> {
             //uus grupp
@@ -48,8 +50,6 @@ public class LooGruppStseen {
     }
 
     public BorderPane getLayout1() {
-
-
         return layout1;
     }
 

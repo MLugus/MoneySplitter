@@ -3,7 +3,6 @@ package main;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import loogika.AndmeBaas;
 
@@ -52,26 +51,20 @@ public class Main extends Application {
         //loo uus grupp stseen
         scene2 = new Scene(layout2, 350, 475);
 
-        // loo uus grupp nupp event
-        // looGrupp.setOnAction(event -> primaryStage.setScene(scene2));
-        // looGrupp1.setOnAction(event -> primaryStage.setScene(scene2));
-        // looGruppStseenObj.nupp.setOnAction(event1 -> primaryStage.setScene(scene3));
 
         //loon uue stseeni objekti e. liikmete lisamise objekti
         lisaLiigeStseenObj = new LisaLiigeStseen();
         layout3 = lisaLiigeStseenObj.getLayout1();
         scene3 = new Scene(layout3, 350, 475);
 
-        // lisa liige nupp event
-        //  lisaLiige.setOnAction(event -> primaryStage.setScene(scene3));
-
     }
 
+    // returnib main'is loodud AndmeBaas'i tüüpi objekti
     public static AndmeBaas getAndmeBaas() {
         return andmeBaas;
     }
 
-    //meetod stseenide vaehtuseks
+    //meetod stseenide vahetuseks
     public static void stseeniVahetus(Scene stseen) {
         aken.setScene(stseen);
     }

@@ -47,6 +47,7 @@ public class StartStseen {
         //lisan layout2'te elemendid
         layout2.getChildren().addAll(tervitus, looGrupp, valiGrupp);
         layout2.setAlignment(CENTER);
+        layout2.setSpacing(20);
 
         //loon menyy objekti
         menyyObj = new Menyy();

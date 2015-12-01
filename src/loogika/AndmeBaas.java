@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class AndmeBaas {
 
-    static ArrayList<Grupp> gruppideList;
+    ArrayList<Grupp> gruppideList;
 
     public AndmeBaas() {
 
@@ -15,5 +15,6 @@ public class AndmeBaas {
     public void lisaGrupp(Grupp grupp) {
         this.gruppideList.add(grupp);
     }
+
 
 }
