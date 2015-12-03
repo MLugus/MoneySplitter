@@ -5,7 +5,6 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
-import loogika.AndmeBaas;
 import loogika.Grupp;
 import loogika.Liige;
 
@@ -16,20 +15,17 @@ import static javafx.geometry.Pos.CENTER;
 public class LisaLiigeStseen {
 
     private BorderPane layout1;
-    private VBox layout2;
-    private Button nupp;
     private TextField tekstv2li;
-    private Label infoText;
     private static ChoiceBox<Grupp> dropDown;
 
 
     public LisaLiigeStseen() {
 
         this.layout1 = new BorderPane();
-        this.layout2 = new VBox();
+        VBox layout2 = new VBox();
 
-        this.nupp = new Button("LISA");
-        this.nupp.setOnAction(event -> {
+        Button nupp = new Button("LISA");
+        nupp.setOnAction(event -> {
             // lisab liikme
             Liige liige = new Liige(tekstv2li.getText());
             Main.getAndmeBaas().gruppideList.get(Main.getAndmeBaas().gruppideList.indexOf(dropDown.getValue())).lisaLiige(liige);
@@ -51,11 +47,11 @@ public class LisaLiigeStseen {
         this.tekstv2li = new TextField();
         this.tekstv2li.setPromptText("Liikme nimi");
 
-        this.infoText = new Label("Sisestage uue liikme nimi!");
+        Label infoText = new Label("Sisestage uue liikme nimi!");
 
         dropDown = Main.getAndmeBaas().getGruppideListChBox();
 
-        layout1.setTop(Menyy.getMenuBar());
+        layout1.setTop(Main.menyyObj.getMenuBar());
 
         // lisan layouti boarder panei
         layout2.setAlignment(CENTER);

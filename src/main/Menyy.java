@@ -7,16 +7,13 @@ import javafx.scene.control.SeparatorMenuItem;
 
 public class Menyy {
 
-    private static MenuBar topMenu;
-    private static Menu fileMenu;
-    private Menu looMenu;
-    private Menu kustutaMenu;
+    private Menu fileMenu;
 
     public Menyy() {
         // menu loomine jne.
         fileMenu = new Menu("_File");
-        looMenu = new Menu("Lisa/Loo");
-        kustutaMenu = new Menu("Kustuta");
+        Menu looMenu = new Menu("Lisa/Loo");
+        Menu kustutaMenu = new Menu("Kustuta");
 
 
         // fileMenu osad e. peamine menüü "file"
@@ -42,9 +39,9 @@ public class Menyy {
 
     }
 
-    public static MenuBar getMenuBar() {
+    public MenuBar getMenuBar() {
         // main menu bar
-        topMenu = new MenuBar();
+        MenuBar topMenu = new MenuBar();
         topMenu.getMenus().addAll(fileMenu);
 
         return topMenu;

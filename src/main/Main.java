@@ -5,7 +5,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import loogika.AndmeBaas;
-import loogika.Grupp;
 
 import java.util.ArrayList;
 
@@ -15,9 +14,8 @@ public class Main extends Application {
     public static Scene scene1, scene2, scene3;
     public BorderPane layout1, layout2, layout3;
     public LooGruppStseen looGruppStseenObj;
-    private LisaLiigeStseen lisaLiigeStseenObj;
-    private StartStseen startStseenObj;
     private static Stage aken;
+    public static Menyy menyyObj;
 
     //andmebaas
     private static AndmeBaas andmeBaas;
@@ -32,8 +30,11 @@ public class Main extends Application {
 
         aken = primaryStage;
 
+        //loon menyy objekti
+        menyyObj = new Menyy();
+
         // loon StartStseen tyypi objekti
-        startStseenObj = new StartStseen();
+        StartStseen startStseenObj = new StartStseen();
         this.layout1 = startStseenObj.getLayout1();
 
         // scene1 ja window
@@ -56,7 +57,7 @@ public class Main extends Application {
 
 
         //loon uue stseeni objekti e. liikmete lisamise objekti
-        lisaLiigeStseenObj = new LisaLiigeStseen();
+        LisaLiigeStseen lisaLiigeStseenObj = new LisaLiigeStseen();
         layout3 = lisaLiigeStseenObj.getLayout1();
         scene3 = new Scene(layout3, 350, 475);
 

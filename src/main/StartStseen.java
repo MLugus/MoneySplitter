@@ -1,9 +1,7 @@
 package main;
 
-import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuBar;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
@@ -14,8 +12,6 @@ public class StartStseen {
     public Button looGrupp, valiGrupp;
     public BorderPane layout1;
     public VBox layout2;
-    private Label tervitus;
-    private Menyy menyyObj;
 
 
     public StartStseen() {
@@ -30,7 +26,7 @@ public class StartStseen {
 
 
         // tervituskiri
-        this.tervitus = new Label("Tere tulemast MoneySplitter'isse!!");
+        Label tervitus = new Label("Tere tulemast MoneySplitter'isse!!");
 
 
         // loo uus grupp nupp
@@ -49,12 +45,8 @@ public class StartStseen {
         layout2.setAlignment(CENTER);
         layout2.setSpacing(20);
 
-        //loon menyy objekti
-        menyyObj = new Menyy();
-
-
         // lisan menyyriba layouti
-        layout1.setTop(Menyy.getMenuBar());
+        layout1.setTop(Main.menyyObj.getMenuBar());
 
     }
 
