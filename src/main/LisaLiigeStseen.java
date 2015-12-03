@@ -7,6 +7,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import loogika.AndmeBaas;
 import loogika.Grupp;
+import loogika.Liige;
 
 import java.util.ArrayList;
 
@@ -20,7 +21,6 @@ public class LisaLiigeStseen {
     private TextField tekstv2li;
     private Label infoText;
     private static ChoiceBox<Grupp> dropDown;
-    private static ObservableList<Grupp> chBoxRefh;
 
 
     public LisaLiigeStseen() {
@@ -30,8 +30,9 @@ public class LisaLiigeStseen {
 
         this.nupp = new Button("LISA");
         this.nupp.setOnAction(event -> {
-            /////// lisab liikme (see veel ei tööta)
-
+            // lisab liikme
+            Liige liige = new Liige(tekstv2li.getText());
+            Main.getAndmeBaas().gruppideList.get(Main.getAndmeBaas().gruppideList.indexOf(dropDown.getValue())).lisaLiige(liige);
 
             // toob ette nö alertboxi, et kysida kas lisada veel liige v6i mitte
             Boolean vastus = AskBox.kysimusKast();
@@ -71,7 +72,7 @@ public class LisaLiigeStseen {
 
 
     public static void refreshChBox() {
-        chBoxRefh = FXCollections.observableArrayList(Main.getAndmeBaas().gruppideList);
+        ObservableList<Grupp> chBoxRefh = FXCollections.observableArrayList(Main.getAndmeBaas().gruppideList);
         dropDown.setItems(chBoxRefh);
 
     }
