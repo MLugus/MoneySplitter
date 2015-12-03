@@ -15,7 +15,9 @@ public class Grupp {
         this.grupiLiikmed = new ArrayList<>();
     }
 
-    //public void lisaLiige(Liige liige){this.grupiLiikmed.add(liige);}
+    public void lisaLiige(Liige liige) {
+        this.grupiLiikmed.add(liige);
+    }
 
 
     @Override

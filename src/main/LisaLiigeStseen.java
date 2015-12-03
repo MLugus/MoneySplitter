@@ -1,13 +1,14 @@
 package main;
 
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import loogika.AndmeBaas;
 import loogika.Grupp;
+
+import java.util.ArrayList;
 
 import static javafx.geometry.Pos.CENTER;
 
@@ -17,8 +18,9 @@ public class LisaLiigeStseen {
     private VBox layout2;
     private Button nupp;
     private TextField tekstv2li;
-    private ChoiceBox<Grupp> dropDown;
     private Label infoText;
+    private static ChoiceBox<Grupp> dropDown;
+    private static ObservableList<Grupp> chBoxRefh;
 
 
     public LisaLiigeStseen() {
@@ -48,10 +50,9 @@ public class LisaLiigeStseen {
         this.tekstv2li = new TextField();
         this.tekstv2li.setPromptText("Liikme nimi");
 
-        this.dropDown = AndmeBaas.getGruppideListChBox();
-
         this.infoText = new Label("Sisestage uue liikme nimi!");
 
+        dropDown = Main.getAndmeBaas().getGruppideListChBox();
 
         layout1.setTop(Menyy.getMenuBar());
 
@@ -68,4 +69,10 @@ public class LisaLiigeStseen {
         return layout1;
     }
 
+
+    public static void refreshChBox() {
+        chBoxRefh = FXCollections.observableArrayList(Main.getAndmeBaas().gruppideList);
+        dropDown.setItems(chBoxRefh);
+
+    }
 }

@@ -43,6 +43,8 @@ public class LooGruppStseen {
             Main.getAndmeBaas().lisaGrupp(grupp);
             //viib stage'i stseen3'me e liikme lisamisse
             Main.stseeniVahetus(Main.scene3);
+            // Peaks uuendama choiceboxi
+            LisaLiigeStseen.refreshChBox();
 
         });
 

@@ -2,7 +2,7 @@ package loogika;
 
 public class Liige {
 
-    private String nimi;
+    private String liikmeNimi;
     private double kontoSeis;
 
     /**
@@ -12,9 +12,12 @@ public class Liige {
      */
     public Liige(String nimi) {
 
-        this.nimi = nimi;
+        this.liikmeNimi = nimi;
         this.kontoSeis = 0.0;
     }
 
+    public String toString() {
+        return this.liikmeNimi;
+    }
 
 }

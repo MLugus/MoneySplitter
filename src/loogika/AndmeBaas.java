@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class AndmeBaas {
 
-    public static ArrayList<Grupp> gruppideList;
+    public ArrayList<Grupp> gruppideList;
 
     public AndmeBaas() {
 
@@ -18,7 +18,7 @@ public class AndmeBaas {
         this.gruppideList.add(grupp);
     }
 
-    public static ChoiceBox<Grupp> getGruppideListChBox() {
+    public ChoiceBox<Grupp> getGruppideListChBox() {
         ChoiceBox<Grupp> kukualla = new ChoiceBox<>();
         for (Grupp grupp : gruppideList) {
             kukualla.getItems().add(grupp);
