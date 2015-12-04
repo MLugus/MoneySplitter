@@ -1,5 +1,6 @@
 package loogika;
 
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.GridPane;
 
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.ArrayList;
 public class Grupp {
 
     private String grupiNimi;
-    private ArrayList<Liige> grupiLiikmed;
+    public ArrayList<Liige> grupiLiikmed;
 
 
     public Grupp(String nimi) {
@@ -24,5 +25,14 @@ public class Grupp {
     public String toString() {
         return this.grupiNimi;
     }
+
+    public ChoiceBox<Liige> getLiikmeListChBox() {
+        ChoiceBox<Liige> kukualla = new ChoiceBox<>();
+        for (Liige liige : grupiLiikmed) {
+            kukualla.getItems().add(liige);
+        }
+        return kukualla;
+    }
+
 }
 

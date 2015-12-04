@@ -7,9 +7,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import loogika.Grupp;
 import loogika.Liige;
-
-import java.util.ArrayList;
-
 import static javafx.geometry.Pos.CENTER;
 
 public class LisaLiigeStseen {
@@ -21,7 +18,7 @@ public class LisaLiigeStseen {
 
     public LisaLiigeStseen() {
 
-        this.layout1 = new BorderPane();
+        layout1 = new BorderPane();
         VBox layout2 = new VBox();
 
         Button nupp = new Button("LISA");
@@ -31,7 +28,7 @@ public class LisaLiigeStseen {
             Main.getAndmeBaas().gruppideList.get(Main.getAndmeBaas().gruppideList.indexOf(dropDown.getValue())).lisaLiige(liige);
 
             // toob ette nö alertboxi, et kysida kas lisada veel liige v6i mitte
-            Boolean vastus = AskBox.kysimusKast();
+            Boolean vastus = AlertBox.KysimusKast("MIS ON TEIE SOOV?", "Kas soovite lisada veel ühe liikme?");
 
             //kontrollin vastust ja käitun kohaselt
             if (vastus) {
@@ -39,7 +36,7 @@ public class LisaLiigeStseen {
             } else {
 
                 ///////////// ESIALGU VIIB START STSEENI TAGASI
-                    Main.stseeniVahetus(Main.scene1); //// ei vii millegipärast
+                Main.stseeniVahetus(Main.scene1);
                 }
 
         });

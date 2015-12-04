@@ -4,8 +4,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import loogika.Grupp;
-
-
 import static javafx.geometry.Pos.CENTER;
 
 public class LooGruppStseen {

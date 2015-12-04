@@ -8,36 +8,36 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class AskBox {
+public class AlertBox {
 
     static boolean vastus;
 
-    public static boolean kysimusKast() {
+    public static boolean KysimusKast(String pealkiri, String infoText) {
 
         Stage aken = new Stage();
         aken.initModality(Modality.APPLICATION_MODAL);
-        aken.setTitle("LISA UUS LIIGE VÕI LIIGU EDASI");
+        aken.setTitle(pealkiri);
         aken.setMinWidth(250);
 
         //teavitus kiri
-        Label teavitusKiri = new Label("Kas soovid lisada veel ühe liikme?");
+        Label teavitusKiri = new Label(infoText);
 
         //"ei" ja "jah" nupud teavitus kastil
-        Button lisaLiigeNupp = new Button("jah");
-        Button edasiNupp = new Button("Ei");
+        Button jahNupp = new Button("jah");
+        Button eiNupp = new Button("Ei");
 
         //loon evendid nuppudele
-        lisaLiigeNupp.setOnAction(event -> {
+        jahNupp.setOnAction(event -> {
             vastus = true;
             aken.close();
         });
-        edasiNupp.setOnAction(event -> {
+        eiNupp.setOnAction(event -> {
             vastus = false;
             aken.close();
         });
 
         VBox layout1 = new VBox();
-        layout1.getChildren().addAll(teavitusKiri, lisaLiigeNupp, edasiNupp);
+        layout1.getChildren().addAll(teavitusKiri, jahNupp, eiNupp);
         layout1.setAlignment(Pos.CENTER);
         Scene scene = new Scene(layout1);
         aken.setScene(scene);

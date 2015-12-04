@@ -6,14 +6,11 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import loogika.AndmeBaas;
 
-import java.util.ArrayList;
-
 public class Main extends Application {
 
 
     public static Scene scene1, scene2, scene3;
     public BorderPane layout1, layout2, layout3;
-    public LooGruppStseen looGruppStseenObj;
     private static Stage aken;
     public static Menyy menyyObj;
 
@@ -29,6 +26,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         aken = primaryStage;
+        //andmebaas
+        andmeBaas = new AndmeBaas();
 
         //loon menyy objekti
         menyyObj = new Menyy();
@@ -41,15 +40,9 @@ public class Main extends Application {
         aken.setTitle("MoneySplitter");
         scene1 = new Scene(layout1, 350, 475);
         aken.setScene(scene1);
-        aken.show();
-
-
-        //andmebaas
-        andmeBaas = new AndmeBaas();
-
 
         //loo uus grupp objekti loomine
-        this.looGruppStseenObj = new LooGruppStseen();
+        LooGruppStseen looGruppStseenObj = new LooGruppStseen();
         //võta layout LooGruppStseen objektist
         this.layout2 = looGruppStseenObj.getLayout1();
         //loo uus grupp stseen
@@ -61,15 +54,14 @@ public class Main extends Application {
         layout3 = lisaLiigeStseenObj.getLayout1();
         scene3 = new Scene(layout3, 350, 475);
 
+        aken.show();
+
     }
 
     // returnib main'is loodud AndmeBaas'i tüüpi objekti
     public static AndmeBaas getAndmeBaas() {
         return andmeBaas;
     }
-
-    //// tagastab VB gruppide arraylisti
-    //// public static ArrayList<Grupp> getGruppList(){return andmeBaas.gruppideList;}
 
     //meetod stseenide vahetuseks
     public static void stseeniVahetus(Scene stseen) {

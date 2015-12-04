@@ -4,14 +4,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
-
 import static javafx.geometry.Pos.CENTER;
 
 public class StartStseen {
 
-    public Button looGrupp, valiGrupp;
-    public BorderPane layout1;
-    public VBox layout2;
+    private BorderPane layout1;
 
 
     public StartStseen() {
@@ -21,7 +18,7 @@ public class StartStseen {
         this.layout1 = new BorderPane();
 
         // main layouti sees olev layout
-        this.layout2 = new VBox();
+        VBox layout2 = new VBox();
         layout1.setCenter(layout2);
 
 
@@ -30,13 +27,13 @@ public class StartStseen {
 
 
         // loo uus grupp nupp
-        looGrupp = new Button("Loo uus grupp");
+        Button looGrupp = new Button("Loo uus grupp");
         //loo grupp event nupp
         looGrupp.setOnAction(event -> Main.stseeniVahetus(Main.scene2));
 
 
         // vali grupp nupp
-        valiGrupp = new Button("Vali grupp");
+        Button valiGrupp = new Button("Vali grupp");
         // vali grupp event nupp
         valiGrupp.setOnAction(event -> Main.stseeniVahetus(Main.scene3));
 
