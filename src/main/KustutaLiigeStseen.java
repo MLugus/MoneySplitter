@@ -12,12 +12,12 @@ import loogika.Liige;
 
 import static javafx.geometry.Pos.CENTER;
 
-public class KustutaLiige {
+public class KustutaLiigeStseen {
 
     private static ChoiceBox<Grupp> grupiDropDown;
     private static ChoiceBox<Liige> liikmeDropDown;
 
-    public KustutaLiige() {
+    public KustutaLiigeStseen() {
 
         // layoutide loomine
         BorderPane layout1 = new BorderPane();
