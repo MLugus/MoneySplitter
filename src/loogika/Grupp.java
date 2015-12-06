@@ -9,11 +9,13 @@ public class Grupp {
 
     private String grupiNimi;
     public ArrayList<Liige> grupiLiikmed;
+    private double ostudeSumma;
 
 
     public Grupp(String nimi) {
         this.grupiNimi = nimi;
         this.grupiLiikmed = new ArrayList<>();
+        this.ostudeSumma = 0.0;
     }
 
     public void lisaLiige(Liige liige) {
