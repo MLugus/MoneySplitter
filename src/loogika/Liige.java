@@ -1,24 +1,30 @@
 package loogika;
 
-import java.util.ArrayList;
+import com.sun.javafx.collections.MappingChange;
+
+import java.util.*;
 
 public class Liige {
 
     private String liikmeNimi;
     private double kontoSeis;
-    private ArrayList<Ost> Ostud;
+    private Map<String, Double> ostud;
 
     public Liige(String nimi) {
 
         this.liikmeNimi = nimi;
         this.kontoSeis = 0.0;
-        this.Ostud = new ArrayList<>();
+        this.ostud = new HashMap<>();
+        ostud.put("kaka", 20.00);
+
+
+
     }
 
     // lisab ostu liikmele
-    public void lisaOst(Ost ost) {
-        this.Ostud.add(ost);
-        this.kontoSeis += ost.getOstuHind();
+    public void lisaOst(String ostuNimi, Double hind) {
+        this.ostud.put(ostuNimi, hind);
+        this.kontoSeis = hind + kontoSeis;
 
     }
 
