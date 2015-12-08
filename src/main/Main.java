@@ -13,6 +13,7 @@ public class Main extends Application {
     public BorderPane layout1, layout2, layout3, layout4, layout5, layout6, layout7;
     private static Stage aken;
     public static Menyy menyyObj;
+    private static int selectedGrupp;
 
     //andmebaas
     private static AndmeBaas andmeBaas;
@@ -68,10 +69,10 @@ public class Main extends Application {
         layout6 = kustutaLiigeStseenObj.getLayout1();
         scene6 = new Scene(layout6, 350, 475);
 
-        //loon tgele grupiga stseeni objekti ja lisan layouti
+        //loon tegele grupiga stseeni objekti ja lisan layouti
         TegeleGrupigaStseen tegeleGrupigaStseenObj = new TegeleGrupigaStseen();
         layout7 = tegeleGrupigaStseenObj.getLayout1();
-        scene7 = new Scene(layout7, 350, 475);
+        scene7 = new Scene(layout7, 475, 375);
 
 
         aken.show();
@@ -88,6 +89,12 @@ public class Main extends Application {
         aken.setScene(stseen);
     }
 
+    public static int getSelectedGrupp() {
+        return selectedGrupp;
+    }
 
+    public static void setSelectedGrupp(int selectedGrup) {
+        selectedGrupp = selectedGrup;
+    }
 
 } // class l6pp

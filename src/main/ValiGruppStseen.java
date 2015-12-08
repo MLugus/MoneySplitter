@@ -32,7 +32,7 @@ public class ValiGruppStseen {
         grupiDropDown = Main.getAndmeBaas().getGruppideListChBox();
 
         //loon nupu ja lisan funktsinaalsuse
-        nupp = new Button("LISA!");
+        nupp = new Button("VALI!");
 
         // loon menüü
         layout1.setTop(Main.menyyObj.getMenuBar());

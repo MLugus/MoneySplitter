@@ -18,9 +18,9 @@ public class Menyy {
 
         // fileMenu osad e. peamine menüü "file"
         fileMenu.getItems().addAll(looMenu, kustutaMenu);
-        MenuItem j2lgi = new MenuItem("Vali grupp...");
-        MenuItem jaga = new MenuItem("Tegele grupiga...");
-        fileMenu.getItems().addAll(new SeparatorMenuItem(), j2lgi, jaga);
+        MenuItem valiGrupp = new MenuItem("Vali grupp...");
+        MenuItem tegelGrupp = new MenuItem("Tegele grupiga...");
+        fileMenu.getItems().addAll(new SeparatorMenuItem(), valiGrupp, tegelGrupp);
 
         // looMenu osad e. pea menu sees
         MenuItem lisaLiige = new MenuItem("Lisa uus liige");
@@ -34,7 +34,19 @@ public class Menyy {
 
         //lisan nuppudele event stseeni vahetused
         looGrupp.setOnAction(event -> Main.stseeniVahetus(Main.scene2));
-        lisaLiige.setOnAction(event -> Main.stseeniVahetus(Main.scene3));
+        lisaLiige.setOnAction(event -> {
+            Main.stseeniVahetus(Main.scene3);
+            LisaLiigeStseen.refreshChBox();
+        });
+        valiGrupp.setOnAction(event -> {
+            Main.stseeniVahetus(Main.scene4);
+            ValiGruppStseen.refreshChBoxValiGrupp();
+        });
+        tegelGrupp.setOnAction(event -> {
+            Main.stseeniVahetus(Main.scene7);
+            TegeleGrupigaStseen.refreshComboBoxTegeleLiige();
+        });
+
 
 
     }

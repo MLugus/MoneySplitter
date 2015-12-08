@@ -8,16 +8,13 @@ public class Liige {
 
     private String liikmeNimi;
     private double kontoSeis;
-    private Map<String, Double> ostud;
+    public Map<String, Double> ostud;
 
     public Liige(String nimi) {
 
         this.liikmeNimi = nimi;
         this.kontoSeis = 0.0;
         this.ostud = new HashMap<>();
-        ostud.put("kaka", 20.00);
-
-
 
     }
 
