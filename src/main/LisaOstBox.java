@@ -28,8 +28,9 @@ public class LisaOstBox {
 
         //loon nupud ja nende funktsionaalsuse
         Button nupp1 = new Button("LISA OST!");
-        nupp1.setOnAction(event -> {
-            Main.getAndmeBaas().gruppideList.get(Main.getSelectedGrupp()).grupiLiikmed.get(TegeleGrupigaStseen.selectedLiige).lisaOst(ostuNimi.getText(), Double.parseDouble(ostuHind.getText()));
+        nupp1.setOnAction(event1 -> {
+            Main.getAndmeBaas().gruppideList.get(Main.getSelectedGrupp()).grupiLiikmed.get(
+                    TegeleGrupigaStseen.selectedLiige).lisaOst(ostuNimi.getText(), Double.parseDouble(ostuHind.getText()));
 
             aken.close();
 

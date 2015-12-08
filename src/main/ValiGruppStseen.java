@@ -33,6 +33,10 @@ public class ValiGruppStseen {
 
         //loon nupu ja lisan funktsinaalsuse
         nupp = new Button("VALI!");
+        nupp.setOnAction(event -> {
+            Main.setSelectedGrupp(Main.getAndmeBaas().gruppideList.indexOf(grupiDropDown.getValue()));
+            Main.stseeniVahetus(Main.scene7);
+        });
 
         // loon menüü
         layout1.setTop(Main.menyyObj.getMenuBar());

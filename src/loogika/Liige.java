@@ -9,6 +9,7 @@ public class Liige {
     private String liikmeNimi;
     private double kontoSeis;
     public Map<String, Double> ostud;
+    private String kuuluvus;
 
     public Liige(String nimi) {
 

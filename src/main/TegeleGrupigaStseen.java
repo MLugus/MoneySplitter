@@ -32,22 +32,24 @@ public class TegeleGrupigaStseen {
         liikmeDropDown = new ComboBox<>();
         liikmeDropDown.setMinWidth(100);
 
-        //lisan tulbad tabelile
+        //lisan tulbad tabelile ning määran reeglistiku
         TableColumn ostuNimi = new TableColumn("Ostu nimi");
-        ostuNimi.setMaxWidth(50);
+        ostuNimi.setMinWidth(50);
         // ostuNimi.setCellValueFactory(new PropertyValueFactory<Liige, String>("Ostu nimi"));
 
         TableColumn hind = new TableColumn("Hind");
-        hind.setMaxWidth(50);
+        hind.setMinWidth(50);
         // hind.setCellValueFactory(new PropertyValueFactory<Liige, Double>("hind"));
         TableView tabel = new TableView();
         tabel.getColumns().addAll(ostuNimi, hind);
+        tabel.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         //loon nupud ja lisan funktsionaalsuse
         Button nupp1 = new Button("LISA OST");
         nupp1.setOnAction(event -> {
-            selectedLiige = liikmeDropDown.getVisibleRowCount();
+            selectedLiige = Main.getAndmeBaas().gruppideList.get(Main.getSelectedGrupp()).grupiLiikmed.indexOf(liikmeDropDown.getValue());
             LisaOstBox.lisaOstBox();
+            System.out.println(selectedLiige);
         });
         Button nupp2 = new Button("Jaga raha");
 
