@@ -16,10 +16,13 @@ public class ValiGruppStseen {
     private Button nupp;
     private static ChoiceBox<Grupp> grupiDropDown;
 
+
+    private BorderPane layout1;
+
     public ValiGruppStseen() {
 
         // layoutide loomine
-        BorderPane layout1 = new BorderPane();
+        layout1 = new BorderPane();
         VBox layout2 = new VBox();
 
         //Tervitus kirja loomine
@@ -29,7 +32,7 @@ public class ValiGruppStseen {
         grupiDropDown = Main.getAndmeBaas().getGruppideListChBox();
 
         //loon nupu ja lisan funktsinaalsuse
-        Button nupp = new Button("LISA!");
+        nupp = new Button("LISA!");
 
         // loon menüü
         layout1.setTop(Main.menyyObj.getMenuBar());
@@ -47,5 +50,9 @@ public class ValiGruppStseen {
         ObservableList<Grupp> chBoxRefh = FXCollections.observableArrayList(Main.getAndmeBaas().gruppideList);
         grupiDropDown.setItems(chBoxRefh);
 
+    }
+
+    public BorderPane getLayout1() {
+        return layout1;
     }
 }

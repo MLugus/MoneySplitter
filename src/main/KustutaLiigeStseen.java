@@ -14,13 +14,15 @@ import static javafx.geometry.Pos.CENTER;
 
 public class KustutaLiigeStseen {
 
+
+    private BorderPane layout1;
     private static ChoiceBox<Grupp> grupiDropDown;
     private static ChoiceBox<Liige> liikmeDropDown;
 
     public KustutaLiigeStseen() {
 
         // layoutide loomine
-        BorderPane layout1 = new BorderPane();
+        layout1 = new BorderPane();
         VBox layout2 = new VBox();
 
         //Tervitus kirja loomine
@@ -28,7 +30,8 @@ public class KustutaLiigeStseen {
 
         //loon Choicebox'id ja täidan need esialgse infoga
         grupiDropDown = Main.getAndmeBaas().getGruppideListChBox();
-        liikmeDropDown = Main.getAndmeBaas().gruppideList.get(Main.getAndmeBaas().gruppideList.indexOf(grupiDropDown.getValue())).getLiikmeListChBox();
+        liikmeDropDown = new ChoiceBox<>();
+        //liikmeDropDown = Main.getAndmeBaas().gruppideList.get(Main.getAndmeBaas().gruppideList.indexOf(grupiDropDown.getValue())).getLiikmeListChBox();
 
         //loon nupu ja lisan funktsinaalsuse
         Button nupp = new Button("Kustuta");
@@ -60,4 +63,9 @@ public class KustutaLiigeStseen {
         ObservableList<Liige> chBoxRefh = FXCollections.observableArrayList(Main.getAndmeBaas().gruppideList.get(Main.getAndmeBaas().gruppideList.indexOf(grupiDropDown.getValue())).grupiLiikmed);
         liikmeDropDown.setItems(chBoxRefh);
     }
+
+    public BorderPane getLayout1() {
+        return layout1;
+    }
+
 }

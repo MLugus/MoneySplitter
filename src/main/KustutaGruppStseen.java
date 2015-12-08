@@ -15,10 +15,13 @@ public class KustutaGruppStseen {
 
     private static ChoiceBox<Grupp> grupiDropDown;
 
+
+    private BorderPane layout1;
+
     public KustutaGruppStseen() {
 
         // layoutide loomine
-        BorderPane layout1 = new BorderPane();
+        layout1 = new BorderPane();
         VBox layout2 = new VBox();
 
         //Tervitus kirja loomine
@@ -52,6 +55,10 @@ public class KustutaGruppStseen {
         ObservableList<Grupp> chBoxRefh = FXCollections.observableArrayList(Main.getAndmeBaas().gruppideList);
         grupiDropDown.setItems(chBoxRefh);
 
+    }
+
+    public BorderPane getLayout1() {
+        return layout1;
     }
 
 }

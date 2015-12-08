@@ -18,8 +18,8 @@ public class Menyy {
 
         // fileMenu osad e. peamine menüü "file"
         fileMenu.getItems().addAll(looMenu, kustutaMenu);
-        MenuItem j2lgi = new MenuItem("J2lgi kulutusi...");
-        MenuItem jaga = new MenuItem("Jaga raha...");
+        MenuItem j2lgi = new MenuItem("Vali grupp...");
+        MenuItem jaga = new MenuItem("Tegele grupiga...");
         fileMenu.getItems().addAll(new SeparatorMenuItem(), j2lgi, jaga);
 
         // looMenu osad e. pea menu sees
