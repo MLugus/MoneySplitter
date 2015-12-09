@@ -1,18 +1,33 @@
 package loogika;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import java.io.*;
 
 public class DataWrite {
 
-    public void kirjutaData() {
+    private Object data;
+
+    public DataWrite(Object data) {
+
+        this.data = data;
+
+    }
+
+    public void writeDisk() {
+
+        FileOutputStream fOut;
+        ObjectOutputStream objOut;
 
         try {
-            FileOutputStream fileOut = new FileOutputStream("MinuData.data");
-        } catch (FileNotFoundException e) {
+            fOut = new FileOutputStream("MinuData.data");
+
+            objOut = new ObjectOutputStream(fOut);
+            objOut.writeObject(this.data);
+
+            objOut.close();
+            fOut.close();
+        } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
 }
