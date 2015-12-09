@@ -32,4 +32,7 @@ public class Liige implements Serializable {
         return this.liikmeNimi;
     }
 
+    public String getKuuluvus() {
+        return kuuluvus;
+    }
 }
