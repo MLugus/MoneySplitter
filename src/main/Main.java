@@ -76,7 +76,6 @@ public class Main extends Application {
 
 
         aken.show();
-
     }
 
     // returnib main'is loodud AndmeBaas'i tüüpi objekti

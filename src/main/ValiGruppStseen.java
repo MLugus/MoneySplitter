@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -14,7 +15,7 @@ import static javafx.geometry.Pos.CENTER;
 public class ValiGruppStseen {
 
     private Button nupp;
-    private static ChoiceBox<Grupp> grupiDropDown;
+    private static ComboBox<Grupp> grupiDropDown;
 
 
     private BorderPane layout1;
@@ -29,7 +30,7 @@ public class ValiGruppStseen {
         Label infoText = new Label("Vali grupp, millega tegeleda edaspidi!");
 
         //loon Choicebox'id ja täidan need esialgse infoga
-        grupiDropDown = Main.getAndmeBaas().getGruppideListChBox();
+        grupiDropDown = Main.getAndmeBaas().getGruppideRefreshCombobx();
 
         //loon nupu ja lisan funktsinaalsuse
         nupp = new Button("VALI!");

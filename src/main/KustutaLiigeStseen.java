@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -16,8 +17,8 @@ public class KustutaLiigeStseen {
 
 
     private BorderPane layout1;
-    private static ChoiceBox<Grupp> grupiDropDown;
-    private static ChoiceBox<Liige> liikmeDropDown;
+    private static ComboBox<Grupp> grupiDropDown;
+    private static ComboBox<Liige> liikmeDropDown;
 
     public KustutaLiigeStseen() {
 
@@ -29,8 +30,8 @@ public class KustutaLiigeStseen {
         Label infoText = new Label("Palun valige grupp millest tahate liiget kustutada");
 
         //loon Choicebox'id ja täidan need esialgse infoga
-        grupiDropDown = Main.getAndmeBaas().getGruppideListChBox();
-        liikmeDropDown = new ChoiceBox<>();
+        grupiDropDown = Main.getAndmeBaas().getGruppideRefreshCombobx();
+        liikmeDropDown = new ComboBox<>();
         //liikmeDropDown = Main.getAndmeBaas().gruppideList.get(Main.getAndmeBaas().gruppideList.indexOf(grupiDropDown.getValue())).getLiikmeListChBox();
 
         //loon nupu ja lisan funktsinaalsuse

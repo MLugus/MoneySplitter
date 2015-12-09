@@ -13,7 +13,7 @@ public class LisaLiigeStseen {
 
     private BorderPane layout1;
     private TextField tekstv2li;
-    private static ChoiceBox<Grupp> dropDown;
+    private static ComboBox<Grupp> dropDown;
 
 
     public LisaLiigeStseen() {
@@ -24,7 +24,7 @@ public class LisaLiigeStseen {
         Button nupp = new Button("LISA");
         nupp.setOnAction(event -> {
             // lisab liikme
-            Liige liige = new Liige(tekstv2li.getText());
+            Liige liige = new Liige(tekstv2li.getText(), dropDown.getValue().toString());
             Main.getAndmeBaas().gruppideList.get(Main.getAndmeBaas().gruppideList.indexOf(dropDown.getValue())).lisaLiige(liige);
 
             // toob ette nö alertboxi, et kysida kas lisada veel liige v6i mitte
@@ -46,7 +46,7 @@ public class LisaLiigeStseen {
 
         Label infoText = new Label("Sisestage uue liikme nimi!");
 
-        dropDown = Main.getAndmeBaas().getGruppideListChBox();
+        dropDown = Main.getAndmeBaas().getGruppideRefreshCombobx();
 
         layout1.setTop(Main.menyyObj.getMenuBar());
 
