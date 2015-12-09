@@ -31,6 +31,7 @@ public class AndmeBaas {
         return kukualla;
     }
 
+    // võtab k6ik liikmed ning lisab ühte ühtsesse arraylisti
     public ArrayList<Liige> valmistaLiikmedKirjutamiseks() {
         ArrayList<Liige> liikmeteList = new ArrayList<>();
         for (Grupp g : this.gruppideList) {
@@ -42,6 +43,7 @@ public class AndmeBaas {
         return liikmeteList;
     }
 
+    // loeb failist objekti välja
     public Object loeObjDiskilt() {
         FileInputStream fIn = null;
         ObjectInputStream objIn = null;
@@ -70,6 +72,7 @@ public class AndmeBaas {
 
     }
 
+    // castib failist loetud objekti arraylistiks
     public ArrayList<Liige> loeData() {
 
         ArrayList<Liige> liikmeteList = new ArrayList<>();
@@ -81,20 +84,28 @@ public class AndmeBaas {
 
     }
 
+    // paneb failist loetud objektid uuesti vajalikke arraylistidesse
     public void taastaAndmed() {
 
         ArrayList<Liige> liikmeteList = loeData();
         for (Liige x : liikmeteList) {
-            for (Grupp y : Main.getAndmeBaas().gruppideList) {
-                if (Objects.equals(x.getKuuluvus(), y.toString())) {
-                    y.lisaLiige(x);
-                } else {
-                    lisaGrupp(y);
-                    y.lisaLiige(x);
+            if (Main.getAndmeBaas().gruppideList.isEmpty()) {
+                Grupp grupp = new Grupp(x.getKuuluvus());
+                lisaGrupp(grupp);
+                grupp.lisaLiige(x);
+            } else {
+                for (Grupp y : Main.getAndmeBaas().gruppideList) {
+                    if (Objects.equals(x.getKuuluvus(), y.toString())) {
+                        y.lisaLiige(x);
+                    } else {
+                        Grupp grupp = new Grupp(x.getKuuluvus());
+                        lisaGrupp(grupp);
+                        grupp.lisaLiige(x);
+                    }
                 }
             }
         }
-
     }
+
 
 }

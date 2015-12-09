@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import loogika.AndmeBaas;
+import loogika.DataWrite;
 
 public class Main extends Application {
 
@@ -14,6 +15,7 @@ public class Main extends Application {
     private static Stage aken;
     public static Menyy menyyObj;
     private static int selectedGrupp;
+    private DataWrite dataWriteObj;
 
     //andmebaas
     private static AndmeBaas andmeBaas;
@@ -29,6 +31,12 @@ public class Main extends Application {
         aken = primaryStage;
         //andmebaas
         andmeBaas = new AndmeBaas();
+
+        // taastan kõik varasemad andmed
+        andmeBaas.taastaAndmed();
+
+        //akna kinni panemisega tegelemine
+        aken.setOnCloseRequest(event -> closeProgram());
 
         //loon menyy objekti
         menyyObj = new Menyy();
@@ -94,6 +102,15 @@ public class Main extends Application {
 
     public static void setSelectedGrupp(int selectedGrup) {
         selectedGrupp = selectedGrup;
+    }
+
+    private void closeProgram() {
+
+        //loon DataWrite objekti
+        this.dataWriteObj = new DataWrite(andmeBaas.valmistaLiikmedKirjutamiseks());
+        //kirjutan diskile
+        this.dataWriteObj.writeDisk();
+
     }
 
 } // class l6pp

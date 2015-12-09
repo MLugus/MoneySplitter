@@ -36,6 +36,7 @@ public class ValiGruppStseen {
         nupp = new Button("VALI!");
         nupp.setOnAction(event -> {
             Main.setSelectedGrupp(Main.getAndmeBaas().gruppideList.indexOf(grupiDropDown.getValue()));
+            TegeleGrupigaStseen.refreshComboBoxTegeleLiige();
             Main.stseeniVahetus(Main.scene7);
         });
 

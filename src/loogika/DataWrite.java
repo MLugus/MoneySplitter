@@ -12,6 +12,7 @@ public class DataWrite {
 
     }
 
+    // kirjutab vajaliku arraylisti failiks
     public void writeDisk() {
 
         FileOutputStream fOut;
