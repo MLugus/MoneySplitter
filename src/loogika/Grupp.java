@@ -4,9 +4,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ChoiceBox;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Grupp {
+public class Grupp implements Serializable {
 
     private String grupiNimi;
     public ArrayList<Liige> grupiLiikmed;

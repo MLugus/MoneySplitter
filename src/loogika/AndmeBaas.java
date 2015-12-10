@@ -31,18 +31,6 @@ public class AndmeBaas {
         return kukualla;
     }
 
-    // võtab k6ik liikmed ning lisab ühte ühtsesse arraylisti
-    public ArrayList<Liige> valmistaLiikmedKirjutamiseks() {
-        ArrayList<Liige> liikmeteList = new ArrayList<>();
-        for (Grupp g : this.gruppideList) {
-            for (Liige l : g.grupiLiikmed) {
-                liikmeteList.add(l);
-
-            }
-        }
-        return liikmeteList;
-    }
-
     // loeb failist objekti välja
     public Object loeObjDiskilt() {
         FileInputStream fIn = null;
@@ -73,9 +61,9 @@ public class AndmeBaas {
     }
 
     // castib failist loetud objekti arraylistiks
-    public ArrayList<Liige> loeData() {
+    public ArrayList<Grupp> loeData() {
 
-        ArrayList<Liige> liikmeteList = new ArrayList<>();
+        ArrayList<Grupp> liikmeteList = new ArrayList<>();
         Object obj = loeObjDiskilt();
         if (obj instanceof ArrayList) {
             liikmeteList = (ArrayList) obj;
@@ -87,28 +75,7 @@ public class AndmeBaas {
     // paneb failist loetud objektid uuesti vajalikke arraylistidesse
     public void taastaAndmed() {
 
-        ArrayList<Liige> liikmeteList = loeData();
-        for (Liige x : liikmeteList) {
-            if (Main.getAndmeBaas().gruppideList.isEmpty()) {
-                Grupp grupp = new Grupp(x.getKuuluvus());
-                grupp.lisaLiige(x);
-                Main.getAndmeBaas().lisaGrupp(grupp);
-
-                System.out.println(x);
-                System.out.println(grupp);
-            } else {
-                for (Grupp y : Main.getAndmeBaas().gruppideList) {
-                    if (Objects.equals(x.getKuuluvus(), y.toString())) {
-                        y.lisaLiige(x);
-                    } else {
-                        Grupp grupp = new Grupp(x.getKuuluvus());
-                        grupp.lisaLiige(x);
-                        Main.getAndmeBaas().lisaGrupp(grupp);
-
-                    }
-                }
-            }
-        }
+        Main.getAndmeBaas().gruppideList = loeData();
     }
 
 

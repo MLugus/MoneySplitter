@@ -33,7 +33,7 @@ public class Main extends Application {
         andmeBaas = new AndmeBaas();
 
         // taastan kõik varasemad andmed
-        //andmeBaas.taastaAndmed();
+        andmeBaas.taastaAndmed();
 
         //akna kinni panemisega tegelemine
         aken.setOnCloseRequest(event -> closeProgram());
@@ -107,7 +107,7 @@ public class Main extends Application {
     private void closeProgram() {
 
         //loon DataWrite objekti
-        this.dataWriteObj = new DataWrite(andmeBaas.valmistaLiikmedKirjutamiseks());
+        this.dataWriteObj = new DataWrite(andmeBaas.gruppideList);
         //kirjutan diskile
         this.dataWriteObj.writeDisk();
 
