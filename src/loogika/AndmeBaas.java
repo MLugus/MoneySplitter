@@ -91,16 +91,20 @@ public class AndmeBaas {
         for (Liige x : liikmeteList) {
             if (Main.getAndmeBaas().gruppideList.isEmpty()) {
                 Grupp grupp = new Grupp(x.getKuuluvus());
-                lisaGrupp(grupp);
                 grupp.lisaLiige(x);
+                Main.getAndmeBaas().lisaGrupp(grupp);
+
+                System.out.println(x);
+                System.out.println(grupp);
             } else {
                 for (Grupp y : Main.getAndmeBaas().gruppideList) {
                     if (Objects.equals(x.getKuuluvus(), y.toString())) {
                         y.lisaLiige(x);
                     } else {
                         Grupp grupp = new Grupp(x.getKuuluvus());
-                        lisaGrupp(grupp);
                         grupp.lisaLiige(x);
+                        Main.getAndmeBaas().lisaGrupp(grupp);
+
                     }
                 }
             }

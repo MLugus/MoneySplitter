@@ -1,13 +1,13 @@
 package loogika;
 
-import com.sun.javafx.collections.MappingChange;
-
 import java.io.Serializable;
 import java.util.*;
 
 public class Liige implements Serializable {
 
     private String liikmeNimi;
+
+
     private double kontoSeis;
     public Map<String, Double> ostud;
     private String kuuluvus;
@@ -35,4 +35,14 @@ public class Liige implements Serializable {
     public String getKuuluvus() {
         return kuuluvus;
     }
+
+    public double getKontoSeis() {
+        return kontoSeis;
+    }
+
+    public void setKontoSeis(double kontoSeis) {
+        this.kontoSeis = kontoSeis;
+    }
+
+
 }

@@ -1,7 +1,8 @@
 package loogika;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.layout.GridPane;
 
 import java.util.ArrayList;
 
@@ -9,13 +10,11 @@ public class Grupp {
 
     private String grupiNimi;
     public ArrayList<Liige> grupiLiikmed;
-    private double ostudeSumma;
 
 
     public Grupp(String nimi) {
         this.grupiNimi = nimi;
         this.grupiLiikmed = new ArrayList<>();
-        this.ostudeSumma = 0.0;
     }
 
     public void lisaLiige(Liige liige) {
@@ -34,6 +33,16 @@ public class Grupp {
             kukualla.getItems().add(liige);
         }
         return kukualla;
+    }
+
+    public ArrayList<Liige> getGrupiLiikmed() {
+        return grupiLiikmed;
+    }
+
+    public ObservableList<Liige> getLiikmeObsList() {
+        ObservableList<Liige> liikmeList = FXCollections.observableArrayList(getGrupiLiikmed());
+
+        return liikmeList;
     }
 
 }

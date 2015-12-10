@@ -33,7 +33,7 @@ public class Main extends Application {
         andmeBaas = new AndmeBaas();
 
         // taastan kõik varasemad andmed
-        andmeBaas.taastaAndmed();
+        //andmeBaas.taastaAndmed();
 
         //akna kinni panemisega tegelemine
         aken.setOnCloseRequest(event -> closeProgram());

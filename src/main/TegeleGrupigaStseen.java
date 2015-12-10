@@ -5,8 +5,9 @@ import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import loogika.Liige;
 
@@ -33,14 +34,15 @@ public class TegeleGrupigaStseen {
         liikmeDropDown.setMinWidth(100);
 
         //lisan tulbad tabelile ning määran reeglistiku
-        TableColumn ostuNimi = new TableColumn("Ostu nimi");
+        TableColumn<Liige, String> ostuNimi = new TableColumn("Ostu nimi");
         ostuNimi.setMinWidth(50);
-        // ostuNimi.setCellValueFactory(new PropertyValueFactory<Liige, String>("Ostu nimi"));
+        ostuNimi.setCellValueFactory(new PropertyValueFactory<>(""));
 
-        TableColumn hind = new TableColumn("Hind");
+        TableColumn<Liige, Double> hind = new TableColumn("Hind");
         hind.setMinWidth(50);
-        // hind.setCellValueFactory(new PropertyValueFactory<Liige, Double>("hind"));
-        TableView tabel = new TableView();
+        hind.setCellValueFactory(new PropertyValueFactory<Liige, Double>("hind"));
+        TableView<Liige> tabel = new TableView();
+        // tabel.setItems(Main.getAndmeBaas().gruppideList.get(Main.getSelectedGrupp()).getLiikmeObsList());
         tabel.getColumns().addAll(ostuNimi, hind);
         tabel.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
@@ -52,6 +54,9 @@ public class TegeleGrupigaStseen {
             System.out.println(selectedLiige);
         });
         Button nupp2 = new Button("Jaga raha");
+        nupp2.setOnAction(event -> {
+            RahaJagamiseBox.jagaRahaBox();
+        });
 
         //loon lõppliku layouti
         layout1.setTop(Main.menyyObj.getMenuBar());
