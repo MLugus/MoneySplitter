@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 public class LisaOstBox {
 
     public static void lisaOstBox() {
+        // uue akna loomine
         Stage aken = new Stage();
         aken.initModality(Modality.APPLICATION_MODAL);
         aken.setTitle("OSTU LISAMINE");
@@ -39,7 +40,7 @@ public class LisaOstBox {
         });
         Button nupp2 = new Button("Cancel");
         nupp2.setOnAction(event -> aken.close());
-
+        // layoutide ja scene loomine ning akna n2itamine ja ootele panek
         VBox layout1 = new VBox();
         layout1.setAlignment(Pos.CENTER);
         layout1.getChildren().addAll(infoText, ostuNimi, ostuHind, nupp1, nupp2);

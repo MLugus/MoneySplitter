@@ -19,10 +19,12 @@ public class AndmeBaas {
         this.gruppideList = new ArrayList<>();
     }
 
+    // lisab grupi andmebaasi arraylisti
     public void lisaGrupp(Grupp grupp) {
         this.gruppideList.add(grupp);
     }
 
+    // loob comboboxi refreshimiseks
     public ComboBox<Grupp> getGruppideRefreshCombobx() {
         ComboBox<Grupp> kukualla = new ComboBox<>();
         for (Grupp grupp : gruppideList) {

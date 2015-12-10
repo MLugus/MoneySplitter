@@ -13,23 +13,17 @@ public class LooGruppStseen {
 
 
     public LooGruppStseen() {
+        // layoutide loomine
         this.layout1 = new BorderPane();
         VBox layout2 = new VBox();
-
-        Button nupp = new Button("LISA");
-
+        // infotekst
         Label looGrpSelgitus = new Label("Palun sisestage uue grupi nimi!");
-
+        // textfieldi loomine
         this.tekstv2li = new TextField();
         this.tekstv2li.setPromptText("Grupi nimi");
 
-        layout2.setAlignment(CENTER);
-        layout2.getChildren().addAll(looGrpSelgitus, tekstv2li, nupp);
-        layout2.setSpacing(20);
-        layout1.setTop(Main.menyyObj.getMenuBar());
-        layout1.setCenter(layout2);
-
-
+        // nupu loomine ja funktsionaalsuse lisamine
+        Button nupp = new Button("LISA");
         nupp.setOnAction(event -> {
             //uus grupp
             Grupp grupp = new Grupp(tekstv2li.getText());
@@ -41,10 +35,16 @@ public class LooGruppStseen {
             LisaLiigeStseen.refreshChBox();
 
         });
-
+        // layoutiga tegelemine, elementide lisamine jne
+        layout2.setAlignment(CENTER);
+        layout2.getChildren().addAll(looGrpSelgitus, tekstv2li, nupp);
+        layout2.setSpacing(20);
+        layout1.setTop(Main.menyyObj.getMenuBar());
+        layout1.setCenter(layout2);
 
     }
 
+    // tagastab layouti
     public BorderPane getLayout1() {
         return layout1;
     }

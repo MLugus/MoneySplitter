@@ -9,6 +9,7 @@ public class RahaJaga {
     private ArrayList<Liige> liikmeteList;
     private double kohustusSumma;
 
+    // uuendab kontoseisud vastavalt kohustusmaksule
     public void liikmeteKontodeUuendamine() {
 
         this.liikmeteList = Main.getAndmeBaas().gruppideList.get(Main.getSelectedGrupp()).getGrupiLiikmed();
@@ -18,6 +19,7 @@ public class RahaJaga {
 
     }
 
+    // leiab kogu summa
     private double koguSumma(ArrayList<Liige> liikmed) {
         double summa = 0;
         for (Liige x : liikmed) {
@@ -26,6 +28,7 @@ public class RahaJaga {
         return summa;
     }
 
+    // leiab kohustusliku summa mida iga liige peab maksma ehk kogusumma jagada liikmete arvuga
     private void liikmeteltKohustusMax() {
         for (Liige x : this.liikmeteList) {
             double liikmeKontoSeis = x.getKontoSeis();

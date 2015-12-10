@@ -60,11 +60,13 @@ public class KustutaLiigeStseen {
 
     }
 
+    // uuendab liikme comboboxi
     public static void refreshChBoxKustLiige() {
         ObservableList<Liige> chBoxRefh = FXCollections.observableArrayList(Main.getAndmeBaas().gruppideList.get(Main.getAndmeBaas().gruppideList.indexOf(grupiDropDown.getValue())).grupiLiikmed);
         liikmeDropDown.setItems(chBoxRefh);
     }
 
+    // tagastab layouti
     public BorderPane getLayout1() {
         return layout1;
     }

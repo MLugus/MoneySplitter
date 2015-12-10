@@ -50,6 +50,7 @@ public class StartStseen {
 
     }
 
+    // tagastab layouti
     public BorderPane getLayout1() {
         return layout1;
     }

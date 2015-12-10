@@ -54,9 +54,7 @@ public class TegeleGrupigaStseen {
             System.out.println(selectedLiige);
         });
         Button nupp2 = new Button("Jaga raha");
-        nupp2.setOnAction(event -> {
-            RahaJagamiseBox.jagaRahaBox();
-        });
+        nupp2.setOnAction(event -> RahaJagamiseBox.jagaRahaBox());
 
         //loon lõppliku layouti
         layout1.setTop(Main.menyyObj.getMenuBar());
@@ -73,11 +71,13 @@ public class TegeleGrupigaStseen {
 
     }
 
+    // uuendab comboboxi stseeni tulemisel
     public static void refreshComboBoxTegeleLiige() {
         ObservableList<Liige> chBoxRefh = FXCollections.observableArrayList(Main.getAndmeBaas().gruppideList.get(Main.getSelectedGrupp()).grupiLiikmed);
         liikmeDropDown.setItems(chBoxRefh);
     }
 
+    // tagastab layouti
     public BorderPane getLayout1() {
         return layout1;
     }

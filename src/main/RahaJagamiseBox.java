@@ -32,7 +32,7 @@ public class RahaJagamiseBox {
         tabel.getColumns().addAll(kes, kellele, kuiPalju);
         tabel.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
-
+        // layouti loomine ning elementide lisamine ning akna näitamine ja ootele panek
         VBox layout = new VBox();
         layout.getChildren().addAll(infoText, tabel);
         Scene stseen = new Scene(layout);

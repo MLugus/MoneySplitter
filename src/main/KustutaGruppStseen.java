@@ -58,6 +58,7 @@ public class KustutaGruppStseen {
 
     }
 
+    // tagastab layouti main'i
     public BorderPane getLayout1() {
         return layout1;
     }

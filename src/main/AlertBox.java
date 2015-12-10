@@ -35,7 +35,7 @@ public class AlertBox {
             vastus = false;
             aken.close();
         });
-
+        // loob vajaliku layouti ja stseeni ning paneb akna ette ja ootele
         VBox layout1 = new VBox();
         layout1.getChildren().addAll(teavitusKiri, jahNupp, eiNupp);
         layout1.setAlignment(Pos.CENTER);

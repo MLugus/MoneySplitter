@@ -29,7 +29,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         aken = primaryStage;
-        //andmebaas
+        //andmebaasi loomine
         andmeBaas = new AndmeBaas();
 
         // taastan kõik varasemad andmed
@@ -96,14 +96,17 @@ public class Main extends Application {
         aken.setScene(stseen);
     }
 
+    //tagastab valitud globaalse grupi
     public static int getSelectedGrupp() {
         return selectedGrupp;
     }
 
+    //muudab valitud globaalse grupi
     public static void setSelectedGrupp(int selectedGrup) {
         selectedGrupp = selectedGrup;
     }
 
+    // toimingud kui programm sulgetakse
     private void closeProgram() {
 
         //loon DataWrite objekti

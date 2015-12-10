@@ -17,14 +17,14 @@ public class LisaLiigeStseen {
 
 
     public LisaLiigeStseen() {
-
+        // layouti loomine
         layout1 = new BorderPane();
         VBox layout2 = new VBox();
-
+        /// nuppude loomine ja funktsionaalsuse lisamine
         Button nupp = new Button("LISA");
         nupp.setOnAction(event -> {
             // lisab liikme
-            Liige liige = new Liige(tekstv2li.getText(), dropDown.getValue().toString());
+            Liige liige = new Liige(tekstv2li.getText());
             Main.getAndmeBaas().gruppideList.get(Main.getAndmeBaas().gruppideList.indexOf(dropDown.getValue())).lisaLiige(liige);
 
             // toob ette nö alertboxi, et kysida kas lisada veel liige v6i mitte
@@ -35,17 +35,17 @@ public class LisaLiigeStseen {
                 tekstv2li.clear();
             } else {
 
-                ///////////// ESIALGU VIIB START STSEENI TAGASI
-                Main.stseeniVahetus(Main.scene1);
+                ///viib vali grupp stseeni
+                Main.stseeniVahetus(Main.scene4);
                 }
 
         });
-
+        // textfieldi loomine
         this.tekstv2li = new TextField();
         this.tekstv2li.setPromptText("Liikme nimi");
-
+        // infoteksti loomine
         Label infoText = new Label("Sisestage uue liikme nimi!");
-
+        // comboboxi täitmine
         dropDown = Main.getAndmeBaas().getGruppideRefreshCombobx();
 
         layout1.setTop(Main.menyyObj.getMenuBar());
@@ -59,11 +59,12 @@ public class LisaLiigeStseen {
 
     }
 
+    // tagastab layouti
     public BorderPane getLayout1() {
         return layout1;
     }
 
-
+    // uuendab stseenis olevat comboboxi
     public static void refreshChBox() {
         ObservableList<Grupp> chBoxRefh = FXCollections.observableArrayList(Main.getAndmeBaas().gruppideList);
         dropDown.setItems(chBoxRefh);

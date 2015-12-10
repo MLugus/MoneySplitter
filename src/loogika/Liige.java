@@ -10,14 +10,13 @@ public class Liige implements Serializable {
 
     private double kontoSeis;
     public Map<String, Double> ostud;
-    private String kuuluvus;
 
-    public Liige(String nimi, String kuuluvus) {
+    // konstruktor liikme loomiseks
+    public Liige(String nimi) {
 
         this.liikmeNimi = nimi;
         this.kontoSeis = 0.0;
         this.ostud = new HashMap<>();
-        this.kuuluvus = kuuluvus;
 
     }
 
@@ -28,18 +27,17 @@ public class Liige implements Serializable {
 
     }
 
+    // tagastab liikme nime
     public String toString() {
         return this.liikmeNimi;
     }
 
-    public String getKuuluvus() {
-        return kuuluvus;
-    }
-
+    // tagastab kontoseisu
     public double getKontoSeis() {
         return kontoSeis;
     }
 
+    // muudab konto seisu
     public void setKontoSeis(double kontoSeis) {
         this.kontoSeis = kontoSeis;
     }

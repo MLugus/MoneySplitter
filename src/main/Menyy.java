@@ -51,6 +51,7 @@ public class Menyy {
 
     }
 
+    // returnib menuBar'i
     public MenuBar getMenuBar() {
         // main menu bar
         MenuBar topMenu = new MenuBar();
