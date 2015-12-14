@@ -38,6 +38,7 @@ public class ValiGruppStseen {
             Main.setSelectedGrupp(Main.getAndmeBaas().gruppideList.indexOf(grupiDropDown.getValue()));
             TegeleGrupigaStseen.refreshComboBoxTegeleLiige();
             Main.stseeniVahetus(Main.scene7);
+            TegeleGrupigaStseen.refreshTabel();
         });
 
         // loon menüü

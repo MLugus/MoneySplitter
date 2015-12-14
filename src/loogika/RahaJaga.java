@@ -16,7 +16,7 @@ public class RahaJaga {
 
         liikmeteList = Main.getAndmeBaas().gruppideList.get(Main.getSelectedGrupp()).getLiikmeListKloon();
         kohustusSumma = koguSumma(liikmeteList) / liikmeteList.size();
-        liikmeteltKohustusMax();
+        liikmeteltKohustusMaks();
 
         return FXCollections.observableArrayList(liikmeteList);
     }
@@ -31,7 +31,7 @@ public class RahaJaga {
     }
 
     // leiab kohustusliku summa mida iga liige peab maksma ehk kogusumma jagada liikmete arvuga
-    private static void liikmeteltKohustusMax() {
+    private static void liikmeteltKohustusMaks() {
         for (Liige x : liikmeteList) {
             double liikmeKontoSeis = x.getKontoSeis();
             double liikmeUusSeis = kohustusSumma - liikmeKontoSeis;

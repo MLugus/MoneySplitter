@@ -9,7 +9,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import loogika.Grupp;
 import loogika.Liige;
+import loogika.Ost;
 import main.Main;
 
 public class TegeleGrupigaStseen {
@@ -17,6 +19,7 @@ public class TegeleGrupigaStseen {
     private BorderPane layout1;
     private static ComboBox<Liige> liikmeDropDown;
     public static int selectedLiige;
+    private static TableView<Ost> tabel;
 
 
     public TegeleGrupigaStseen() {
@@ -35,15 +38,13 @@ public class TegeleGrupigaStseen {
         liikmeDropDown.setMinWidth(100);
 
         //lisan tulbad tabelile ning määran reeglistiku
-        TableColumn<Liige, String> ostuNimi = new TableColumn("Ostu nimi");
+        TableColumn<Ost, String> ostuNimi = new TableColumn("Ostu nimi");
         ostuNimi.setMinWidth(50);
-        ostuNimi.setCellValueFactory(new PropertyValueFactory<>(""));
-
-        TableColumn<Liige, Double> hind = new TableColumn("Hind");
+        ostuNimi.setCellValueFactory(new PropertyValueFactory<>("ostuNimi"));
+        TableColumn<Ost, Double> hind = new TableColumn("Hind");
         hind.setMinWidth(50);
         hind.setCellValueFactory(new PropertyValueFactory<>("hind"));
-        TableView<Liige> tabel = new TableView();
-        // tabel.setItems(Main.getAndmeBaas().gruppideList.get(Main.getSelectedGrupp()).getLiikmeObsList());
+        tabel = new TableView();
         tabel.getColumns().addAll(ostuNimi, hind);
         tabel.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
@@ -83,4 +84,7 @@ public class TegeleGrupigaStseen {
         return layout1;
     }
 
+    public static void refreshTabel(){
+        tabel.setItems(Main.getAndmeBaas().gruppideList.get(Main.getSelectedGrupp()).getLiikmeteOstud());
+    }
 }

@@ -8,6 +8,7 @@ public class Liige implements Serializable, Cloneable {
     private String liikmeNimi;
     private Double kontoSeis;
     public Map<String, Double> ostud;
+    public ArrayList<String> ostuNimed;
 
 
 
@@ -17,6 +18,7 @@ public class Liige implements Serializable, Cloneable {
         this.liikmeNimi = nimi;
         this.kontoSeis = 0.0;
         this.ostud = new HashMap<>();
+        this.ostuNimed = new ArrayList<>();
 
     }
 
@@ -57,4 +59,5 @@ public class Liige implements Serializable, Cloneable {
             return null;
         }
     }
+
 }

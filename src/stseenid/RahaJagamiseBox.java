@@ -22,8 +22,7 @@ public class RahaJagamiseBox {
         aken.setMaxHeight(400);
 
         //info tekst
-        Label infoText = new Label("Siin näete summat mida keegi peab maksma,\n" +
-                "  isikutele kellel miinus ees, tuleb maksta");
+        Label infoText = new Label("Siin näete summat mida keegi peab maksma, isikutel kellel miinus ees, tuleb maksta");
 
         // tabeli loomine
         TableView tabel = new TableView();

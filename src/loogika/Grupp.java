@@ -53,5 +53,16 @@ public class Grupp implements Serializable {
         return liige;
     }
 
+    public ObservableList<Ost> getLiikmeteOstud(){
+        ArrayList<Ost> ostud = new ArrayList<>();
+        for (Liige x : grupiLiikmed){
+            for (String y : x.ostuNimed){
+                Ost buy = new Ost(y, x.ostud.get(y));
+                ostud.add(buy);
+            }
+        }
+        return FXCollections.observableArrayList(ostud);
+    }
+
 }
 

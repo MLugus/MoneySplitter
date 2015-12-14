@@ -48,6 +48,7 @@ public class Menyy {
         tegelGrupp.setOnAction(event -> {
             Main.stseeniVahetus(Main.scene7);
             TegeleGrupigaStseen.refreshComboBoxTegeleLiige();
+            TegeleGrupigaStseen.refreshTabel();
         });
 
 
