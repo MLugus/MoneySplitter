@@ -6,6 +6,7 @@ import javafx.scene.control.ChoiceBox;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class Grupp implements Serializable {
 
@@ -43,9 +44,13 @@ public class Grupp implements Serializable {
         return grupiLiikmed;
     }
 
-    // tagastab observablelisti liikmete arraylistist
-    public ObservableList<Liige> getLiikmeObsList() {
-        return FXCollections.observableArrayList(getGrupiLiikmed());
+    public ArrayList<Liige> getLiikmeListKloon(){
+        ArrayList<Liige> liige = new ArrayList<>();
+        for (Liige x : grupiLiikmed){
+            Liige l = x.getClone();
+            liige.add(l);
+        }
+        return liige;
     }
 
 }

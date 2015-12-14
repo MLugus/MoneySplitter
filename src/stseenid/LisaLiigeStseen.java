@@ -1,4 +1,4 @@
-package main;
+package stseenid;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -7,6 +7,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import loogika.Grupp;
 import loogika.Liige;
+import main.Main;
+
 import static javafx.geometry.Pos.CENTER;
 
 public class LisaLiigeStseen {

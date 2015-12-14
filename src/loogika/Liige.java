@@ -3,13 +3,13 @@ package loogika;
 import java.io.Serializable;
 import java.util.*;
 
-public class Liige implements Serializable {
+public class Liige implements Serializable, Cloneable {
 
     private String liikmeNimi;
-
-
-    private double kontoSeis;
+    private Double kontoSeis;
     public Map<String, Double> ostud;
+
+
 
     // konstruktor liikme loomiseks
     public Liige(String nimi) {
@@ -33,7 +33,7 @@ public class Liige implements Serializable {
     }
 
     // tagastab kontoseisu
-    public double getKontoSeis() {
+    public Double getKontoSeis() {
         return kontoSeis;
     }
 
@@ -42,5 +42,19 @@ public class Liige implements Serializable {
         this.kontoSeis = kontoSeis;
     }
 
+    public String getLiikmeNimi() {
+        return liikmeNimi;
+    }
 
+    protected Object clone() throws CloneNotSupportedException{
+        return super.clone();
+    }
+
+    public Liige getClone(){
+        try{
+            return (Liige) clone();
+        }catch (Exception e){
+            return null;
+        }
+    }
 }

@@ -6,6 +6,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import loogika.AndmeBaas;
 import loogika.DataWrite;
+import stseenid.*;
 
 public class Main extends Application {
 
@@ -15,7 +16,6 @@ public class Main extends Application {
     private static Stage aken;
     public static Menyy menyyObj;
     private static int selectedGrupp;
-    private DataWrite dataWriteObj;
 
     //andmebaas
     private static AndmeBaas andmeBaas;
@@ -110,9 +110,9 @@ public class Main extends Application {
     private void closeProgram() {
 
         //loon DataWrite objekti
-        this.dataWriteObj = new DataWrite(andmeBaas.gruppideList);
+        DataWrite dataWriteObj = new DataWrite(andmeBaas.gruppideList);
         //kirjutan diskile
-        this.dataWriteObj.writeDisk();
+        dataWriteObj.writeDisk();
 
     }
 

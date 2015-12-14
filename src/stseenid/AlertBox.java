@@ -1,4 +1,4 @@
-package main;
+package stseenid;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
